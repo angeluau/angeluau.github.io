@@ -1,26 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>我的一天</title>
-    <url>/2020/05/05/%E6%88%91%E7%9A%84%E4%B8%80%E5%A4%A9/</url>
-    <content><![CDATA[<h1 id="我是一级标题"><a href="#我是一级标题" class="headerlink" title="我是一级标题"></a>我是一级标题</h1><h2 id="我是二级标题"><a href="#我是二级标题" class="headerlink" title="我是二级标题"></a>我是二级标题</h2><h3 id="我是三级标题"><a href="#我是三级标题" class="headerlink" title="我是三级标题"></a>我是三级标题</h3><h1 id="我是一级标题-1"><a href="#我是一级标题-1" class="headerlink" title="我是一级标题"></a>我是一级标题</h1><h2 id="我是二级标题-1"><a href="#我是二级标题-1" class="headerlink" title="我是二级标题"></a>我是二级标题</h2><ul>
-<li>列表1</li>
-<li>列表2<br>  a 字母列表<br>  b 数字列表</li>
-<li>列表2</li>
+    <title>Spring Cloud 1</title>
+    <url>/2020/06/13/Spring-Cloud-1-1/</url>
+    <content><![CDATA[<h1 id="什么是微服务"><a href="#什么是微服务" class="headerlink" title="什么是微服务"></a>什么是微服务</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>①分布式服务：专业的事情交给专业的人做，尽量降级耦合度<br>②将单一的业务拆分形成一组小服务<br>③服务级别之间采用轻量级的通信机制互相调用，基于HTTP的Restful API(Dubbo 是RPC 远程过程服务调用)</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ol>
+<li>每个服务足够内聚，足够小，代码容易理解这样能聚焦到一个指定的业务功能的业务需求</li>
+<li>开发简单，效率高</li>
+</ol>
+<h2 id="微服务技术栈有哪些"><a href="#微服务技术栈有哪些" class="headerlink" title="微服务技术栈有哪些"></a>微服务技术栈有哪些</h2><p>多种技术的集合体：<br>服务开发：Spring Boot、Spring、SPring MVC<br>服务治理<br>服务注册:Eureaka、Consul、Zookeeper<br>服务调用：Rest、RPC、gRPC<br>服务负载均衡:Ribbion、Nginx<br>服务接口调用：Feign<br>消息队列：Rabbit MQ、Kafka<br>服务部署： Docker<br>服务监控<br>Spring Cloud 配置中心</p>
+<h1 id="为什么选择Spring-CLoud作为微服务架构"><a href="#为什么选择Spring-CLoud作为微服务架构" class="headerlink" title="为什么选择Spring CLoud作为微服务架构"></a>为什么选择Spring CLoud作为微服务架构</h1><ul>
+<li>随着业务的发展，开发变得越来越复杂。修改、新增某个功能，需要对整个系统进⾏测试、重新部署。⼀个模块出现问题，很可能导致整个系统崩溃。</li>
+<li>多个开发团队同时对数据进⾏管理，容易产⽣安全漏洞。<br>各个模块使⽤同⼀种技术进⾏开发，各个模块很难根据实际情况选择更合适的技术框架，局限性很<br>⼤。模块内容过于复杂，如果员⼯离职，可能需要很⻓时间才能完成⼯作交接。<br>分布式、集群</li>
+<li>集群：⼀台服务器⽆法负荷⾼并发的数据访问量，那么就设置⼗台服务器⼀起分担压⼒，⼗台不⾏就设<br>置⼀百台（物理层⾯）。很多⼈⼲同⼀件事情，来分摊压⼒。</li>
+<li>分布式：将⼀个复杂问题拆分成若⼲个简单的⼩问题，将⼀个⼤型的项⽬架构拆分成若⼲个微服务来协<br>同完成。（软件设计层⾯）。将⼀个庞⼤的⼯作拆分成若⼲个⼩步骤，分别由不同的⼈完成这些⼩步<br>骤，最终将所有的结果进⾏整合实现⼤的需求。</li>
+<li>服务治理的核⼼⼜三部分组成：服务提供者、服务消费者、注册中⼼。</li>
+<li>在分布式系统架构中，每个微服务在启动时，将⾃⼰的信息存储在注册中⼼，叫做服务注册。</li>
+<li>服务消费者从注册中⼼获取服务提供者的⽹络信息，通过该信息调⽤服务，叫做服务发现。</li>
+<li>Spring Cloud 的服务治理使⽤ Eureka 来实现， Eureka 是 Netflix 开源的基于 REST 的服务治理解决⽅<br>案， Spring Cloud 集成了 Eureka，提供服务注册和服务发现的功能，可以和基于 Spring Boot 搭建的<br>微服务应⽤轻松完成整合，开箱即⽤， Spring Cloud Eureka。  </li>
 </ul>
-<p><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a><br><img src="http://img3.imgtn.bdimg.com/it/u=2048761274,2444463275&fm=26&gp=0.jpg" alt="图片"></p>
-<p><code>&lt;html&gt;&lt;/html&gt;</code></p>
-<pre><code>&lt;html&gt;
-&lt;aspect&gt;
-while(true)
-&apos;&apos;&apos;</code></pre>]]></content>
+<h1 id="Spring-Cloud-Eureka"><a href="#Spring-Cloud-Eureka" class="headerlink" title="Spring Cloud Eureka"></a>Spring Cloud Eureka</h1><h2 id="Eureka-Server配置"><a href="#Eureka-Server配置" class="headerlink" title="Eureka Server配置"></a>Eureka Server配置</h2><ul>
+<li>创建父工程</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.southwind<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springcloud<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--引入父依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>Finchley.SR2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在父工程下创建Moudule, pom.xml</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.southwind<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springcloud<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>eurekaserver<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--引入父依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>Finchley.SR2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在⽗⼯程下创建 Module， pom.xml  </p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>Finchley.SR2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建配置⽂件 application.yml，添加 Eureka Server 相关配置。</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8761</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">register-with-eureka:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">fetch-registry:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8761/eureka/</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>属性说明</p>
+</blockquote>
+<p><code>server.port</code>：当前 Eureka Server 服务端⼝。<br><code>eureka.client.register-with-eureka</code> ：是否将当前的 Eureka Server 服务作为客户端进⾏注册。<br><code>eureka.client.fetch-fegistry</code>：是否获取其他 Eureka Server 服务的数据。<br><code>eureka.client.service-url.defaultZone</code>：注册中⼼的访问地址</p>
+</li>
+</ul>
+<ul>
+<li><p>创建启动类  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.southwind;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EurekaServerApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(EurekaServerApplication<span class="class">.<span class="keyword">class</span>,<span class="title">args</span>)</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注解说明<br><code>@SpringBootApplication</code> ：声明该类是 Spring Boot 服务的⼊⼝。<br><code>@EnableEurekaServer</code> ：声明该类是⼀个 Eureka Server 微服务，提供服务注册和服务发现功能，即注册中⼼。  </p>
+<h2 id="Eureka-Client-代码实现"><a href="#Eureka-Client-代码实现" class="headerlink" title="Eureka Client 代码实现"></a>Eureka Client 代码实现</h2><ul>
+<li>创建 Module ， pom.xml  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.2.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>创建 Module ， pom.xml</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.2.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建配置⽂件 application.yml，添加 Eureka Client 相关配置  </li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8010</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">provider</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8761/eureka/</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">prefer-ip-address:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>属性说明</p>
+</blockquote>
+<p><code>spring.application.name</code>:当前服务注册在 Eureka Server 上的名称。<br><code>eureka.client.service-url.defaultZone</code> ：注册中⼼的访问地址。<br><code>eureka.instance.prefer-ip-address</code> ：是否将当前服务的 IP 注册到 Eureka Server。  </p>
+<ul>
+<li>创建启动类  </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.southwind;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProviderApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ProviderApplication<span class="class">.<span class="keyword">class</span>,<span class="title">args</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
-        <category>前端</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>分享</tag>
-        <tag>随笔</tag>
+        <tag>Spring Cloud</tag>
+        <tag>微服务</tag>
+        <tag>实战</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>spring cloud 2</title>
+    <url>/2020/06/13/spring-cloud-2/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>论文阅读 Region Attention Networks for Pose and Occlusion Robust Facial Expression Recognition</title>
@@ -35,14 +93,16 @@ while(true)
 <p><img src="https://imgconvert.csdnimg.cn/aHR0cDovL29ud2FpZXIuY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE5LzExL2I3OGQ5Y2MxMWM2YzUwMmYxYzBmMjhlNWRiMGNhNTg5LnBuZw?x-oss-process=image/format,png" alt="特征图"></p>
 <p>RAN由三个模块组成：特征提取模块、Self-attention模块、Relation-attention模块。</p>
 <h2 id="自注意力模块"><a href="#自注意力模块" class="headerlink" title="自注意力模块"></a>自注意力模块</h2><ul>
-<li><p>首先对原始人脸copy一份，然后再对人脸裁剪k份（有三种策略，后面会详细介绍）。都经过相同的CNN（VGG或ResNet）结构进行特征提取，这里权值共享。</p>
-</li>
-<li><p>符号介绍：$I$ 代表原始图像，$I_0$代表图像的复制副本，$I_1,I_2,…,I_k$代表对原始图像的裁剪。$r(·;θ)$代表CNN骨干。那么图片$I$的特征集合定义为：<br>$$X=[F_0,F_1,…,F_k]=[r(I_0,θ)，r(I_1,θ,…,r(I_k,θ))]$$<br>$$µ<em>i = f({F_i}^Tq^0)$$<br>$$F_m = \frac{1}{\sum</em>{i=0}^{n}µ<em>i}\sum</em>{i=0}^{n} µ_i F_i$$<br>其中$q_0$表示全连接层的参数而f表示的是激活函数 。即将局部区域提取的特征经过一个全边接层，然后经过激活函数得到对应权重。并将局部区域进行加权表示整体特征。 </p>
+<li>首先对原始人脸copy一份，然后再对人脸裁剪k份（有三种策略，后面会详细介绍）。都经过相同的CNN（VGG或ResNet）结构进行特征提取，这里权值共享。</li>
+<li><p>符号介绍：$I$ 代表原始图像，$I_0$代表图像的复制副本，$I_1,I_2,…,I_k$代表对原始图像的裁剪。$r(·;θ)$代表CNN骨干。那么图片$I$的特征集合定义为：</p>
+<script type="math/tex; mode=display">X=[F_0,F_1,…,F_k]=[r(I_0,θ)，r(I_1,θ,…,r(I_k,θ))]</script><script type="math/tex; mode=display">µ_i = f({F_i}^Tq^0)</script><script type="math/tex; mode=display">F_m = \frac{1}{\sum_{i=0}^{n}µ_i}\sum_{i=0}^{n} µ_i F_i</script><p>其中$q_0$表示全连接层的参数而f表示的是激活函数 。即将局部区域提取的特征经过一个全边接层，然后经过激活函数得到对应权重。并将局部区域进行加权表示整体特征。 </p>
 <h2 id="Relation-attention（相关注意力）模块"><a href="#Relation-attention（相关注意力）模块" class="headerlink" title="Relation-attention（相关注意力）模块"></a>Relation-attention（相关注意力）模块</h2><p>self-attention模块学习具有个体特征和非线性映射的权值，这是相当粗糙的。由于聚合表征Fm本质上代表了所有面部区域的内容，因此可以通过建模区域特征与该全局表征$F_m$之间的关系来进一步细化注意力权重。</p>
-<p>关系注意模块中第i个区域的新注意权重表示为:<br>$$<br>  ν_i = f([F_i : F_m]q^1)<br>$$<br>$F_i$表示区域提取特征将其与整体特征$F_m$作一个拼接操作，然后经过全连接层再经过激活函数，得到结合局部与整体的特征的权重$v_i$。</p>
+<p>关系注意模块中第i个区域的新注意权重表示为:</p>
+<script type="math/tex; mode=display">
+  ν_i = f([F_i : F_m]q^1)</script><p>$F_i$表示区域提取特征将其与整体特征$F_m$作一个拼接操作，然后经过全连接层再经过激活函数，得到结合局部与整体的特征的权重$v_i$。</p>
 </li>
 </ul>
-<p><img src="/images/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200506170133.png" alt="相对注意力"><br>在这一阶段，将所有的区域信息$v_i$以及粗糙的全局表示$u_i$从自我注意集合成一个新的紧凑特征$F_{RAN}$，</p>
+<p><img src="/images/微信截图_20200506170133.png" alt="相对注意力"><br>在这一阶段，将所有的区域信息$v_i$以及粗糙的全局表示$u_i$从自我注意集合成一个新的紧凑特征$F_{RAN}$，</p>
 <h2 id="区域生成"><a href="#区域生成" class="headerlink" title="区域生成"></a>区域生成</h2><p>按照比例进行裁剪</p>
 <ul>
 <li>Fixed Crop<br>Fixed Crop: top-left、top-right、center-down(0.75)、center(0.85)、center(0.9)</li>
@@ -50,8 +110,8 @@ while(true)
 <li>Randomly Crop<br>Randomly Crop: randomly crop N regions（0.7-0.95）</li>
 </ul>
 <p>三种裁剪策略的比较:<br><img src="https://imgconvert.csdnimg.cn/aHR0cDovL29ud2FpZXIuY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE5LzExLzE5NjZjMzAwZmY5NzQ3OGE1Mjk5YTFmODYxZGFlOThmLnBuZw?x-oss-process=image/format,png" alt="裁剪策略比较"></p>
-<h2 id="RB-Loss"><a href="#RB-Loss" class="headerlink" title="RB Loss"></a>RB Loss</h2><p>$L_{RB}=max(0,α−(μ<em>{max}−μ</em>{0}))$</p>
-<p>受到“不同的表情是由不同的表情区域决定的”的相关研究的启发，作者希望对self-Attention中的权重作出直接的限制，使裁剪区域中至少有一个的权重要大于原始人脸特征所占的权重。基于此提出了Region Biased Loss的损失函数，其中$\alpha$是超参数，${\mu}<em>{0}$表示copy人脸的特征所占的权重，${\mu}</em>{max}$表示所有裁剪人脸中特征所占的最大权重。在训练中，在分类损失函数中加入RB-Loss。作者在后面对该损失函数对实验性能的影响做了相关的实验比较。</p>
+<h2 id="RB-Loss"><a href="#RB-Loss" class="headerlink" title="RB Loss"></a>RB Loss</h2><p>$L_{RB}=max(0,α−(μ_{max}−μ_{0}))$</p>
+<p>受到“不同的表情是由不同的表情区域决定的”的相关研究的启发，作者希望对self-Attention中的权重作出直接的限制，使裁剪区域中至少有一个的权重要大于原始人脸特征所占的权重。基于此提出了Region Biased Loss的损失函数，其中$\alpha$是超参数，${\mu}_{0}$表示copy人脸的特征所占的权重，${\mu}_{max}$表示所有裁剪人脸中特征所占的最大权重。在训练中，在分类损失函数中加入RB-Loss。作者在后面对该损失函数对实验性能的影响做了相关的实验比较。</p>
 <h1 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h1><h2 id="实验数据介绍"><a href="#实验数据介绍" class="headerlink" title="实验数据介绍"></a>实验数据介绍</h2><p><img src="https://imgconvert.csdnimg.cn/aHR0cDovL29ud2FpZXIuY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE5LzExLzg0NTIxNzhhMzEyMzNlMzg0NWRjZmVjNjg5NjZmODMxLnBuZw?x-oss-process=image/format,png" alt="实验图片"></p>
 ]]></content>
       <categories>
@@ -64,41 +124,25 @@ while(true)
       </tags>
   </entry>
   <entry>
-    <title>article_title</title>
-    <url>/2020/06/13/article-title/</url>
-    <content><![CDATA[#什么是微服务
-
-##概念
-
-分布式服务：专业的事情交给专业的人做，尽量降级耦合度
-将单一的业务拆分形成一组小服务
-服务级别之间采用轻量级的通信机制互相调用，基于HTTP的Restful API(Dubbo 是RPC 远程过程服务调用)
-
-##优点
-开发简单，效率高
-
-##微服务技术栈有哪些
-多种技术的集合体：
-服务开发：Spring Boot、Spring、SPring MVC
-服务治理
-服务注册:Eureaka、Consul、Zookeeper
-服务调用：Rest、RPC、gRPC
-服务负载均衡:Ribbion、Nginx
-服务接口调用：Feign
-消息队列：Rabbit MQ、Kafka
-服务部署： Docker
-服务监控
-Spring Cloud 配置中心
-
-
+    <title>我的一天</title>
+    <url>/2020/05/05/%E6%88%91%E7%9A%84%E4%B8%80%E5%A4%A9/</url>
+    <content><![CDATA[<h1 id="我是一级标题"><a href="#我是一级标题" class="headerlink" title="我是一级标题"></a>我是一级标题</h1><h2 id="我是二级标题"><a href="#我是二级标题" class="headerlink" title="我是二级标题"></a>我是二级标题</h2><h3 id="我是三级标题"><a href="#我是三级标题" class="headerlink" title="我是三级标题"></a>我是三级标题</h3><h1 id="我是一级标题-1"><a href="#我是一级标题-1" class="headerlink" title="我是一级标题"></a>我是一级标题</h1><h2 id="我是二级标题-1"><a href="#我是二级标题-1" class="headerlink" title="我是二级标题"></a>我是二级标题</h2><ul>
+<li>列表1</li>
+<li>列表2<br>  a 字母列表<br>  b 数字列表</li>
+<li>列表2</li>
+</ul>
+<p><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a><br><img src="http://img3.imgtn.bdimg.com/it/u=2048761274,2444463275&amp;fm=26&amp;gp=0.jpg" alt="图片"></p>
+<p><code>&lt;html&gt;&lt;/html&gt;</code></p>
+<p>```</p>
+<p><html></p>
+<p><aspect><br>while(true)<br>‘’’</p>
 ]]></content>
       <categories>
-        <category>技术</category>
+        <category>前端</category>
       </categories>
       <tags>
-        <tag>Spring Cloud</tag>
-        <tag>微服务</tag>
-        <tag>实战</tag>
+        <tag>分享</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
 </search>

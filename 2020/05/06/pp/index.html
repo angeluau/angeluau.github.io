@@ -438,14 +438,16 @@
 <p><img src="https://imgconvert.csdnimg.cn/aHR0cDovL29ud2FpZXIuY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE5LzExL2I3OGQ5Y2MxMWM2YzUwMmYxYzBmMjhlNWRiMGNhNTg5LnBuZw?x-oss-process=image/format,png" alt="特征图"></p>
 <p>RAN由三个模块组成：特征提取模块、Self-attention模块、Relation-attention模块。</p>
 <h2 id="自注意力模块"><a href="#自注意力模块" class="headerlink" title="自注意力模块"></a>自注意力模块</h2><ul>
-<li><p>首先对原始人脸copy一份，然后再对人脸裁剪k份（有三种策略，后面会详细介绍）。都经过相同的CNN（VGG或ResNet）结构进行特征提取，这里权值共享。</p>
-</li>
-<li><p>符号介绍：$I$ 代表原始图像，$I_0$代表图像的复制副本，$I_1,I_2,…,I_k$代表对原始图像的裁剪。$r(·;θ)$代表CNN骨干。那么图片$I$的特征集合定义为：<br>$$X=[F_0,F_1,…,F_k]=[r(I_0,θ)，r(I_1,θ,…,r(I_k,θ))]$$<br>$$µ<em>i = f({F_i}^Tq^0)$$<br>$$F_m = \frac{1}{\sum</em>{i=0}^{n}µ<em>i}\sum</em>{i=0}^{n} µ_i F_i$$<br>其中$q_0$表示全连接层的参数而f表示的是激活函数 。即将局部区域提取的特征经过一个全边接层，然后经过激活函数得到对应权重。并将局部区域进行加权表示整体特征。 </p>
+<li>首先对原始人脸copy一份，然后再对人脸裁剪k份（有三种策略，后面会详细介绍）。都经过相同的CNN（VGG或ResNet）结构进行特征提取，这里权值共享。</li>
+<li><p>符号介绍：$I$ 代表原始图像，$I_0$代表图像的复制副本，$I_1,I_2,…,I_k$代表对原始图像的裁剪。$r(·;θ)$代表CNN骨干。那么图片$I$的特征集合定义为：</p>
+<script type="math/tex; mode=display">X=[F_0,F_1,…,F_k]=[r(I_0,θ)，r(I_1,θ,…,r(I_k,θ))]</script><script type="math/tex; mode=display">µ_i = f({F_i}^Tq^0)</script><script type="math/tex; mode=display">F_m = \frac{1}{\sum_{i=0}^{n}µ_i}\sum_{i=0}^{n} µ_i F_i</script><p>其中$q_0$表示全连接层的参数而f表示的是激活函数 。即将局部区域提取的特征经过一个全边接层，然后经过激活函数得到对应权重。并将局部区域进行加权表示整体特征。 </p>
 <h2 id="Relation-attention（相关注意力）模块"><a href="#Relation-attention（相关注意力）模块" class="headerlink" title="Relation-attention（相关注意力）模块"></a>Relation-attention（相关注意力）模块</h2><p>self-attention模块学习具有个体特征和非线性映射的权值，这是相当粗糙的。由于聚合表征Fm本质上代表了所有面部区域的内容，因此可以通过建模区域特征与该全局表征$F_m$之间的关系来进一步细化注意力权重。</p>
-<p>关系注意模块中第i个区域的新注意权重表示为:<br>$$<br>  ν_i = f([F_i : F_m]q^1)<br>$$<br>$F_i$表示区域提取特征将其与整体特征$F_m$作一个拼接操作，然后经过全连接层再经过激活函数，得到结合局部与整体的特征的权重$v_i$。</p>
+<p>关系注意模块中第i个区域的新注意权重表示为:</p>
+<script type="math/tex; mode=display">
+  ν_i = f([F_i : F_m]q^1)</script><p>$F_i$表示区域提取特征将其与整体特征$F_m$作一个拼接操作，然后经过全连接层再经过激活函数，得到结合局部与整体的特征的权重$v_i$。</p>
 </li>
 </ul>
-<p><img src="/images/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200506170133.png" alt="相对注意力"><br>在这一阶段，将所有的区域信息$v_i$以及粗糙的全局表示$u_i$从自我注意集合成一个新的紧凑特征$F_{RAN}$，</p>
+<p><img src="/images/微信截图_20200506170133.png" alt="相对注意力"><br>在这一阶段，将所有的区域信息$v_i$以及粗糙的全局表示$u_i$从自我注意集合成一个新的紧凑特征$F_{RAN}$，</p>
 <h2 id="区域生成"><a href="#区域生成" class="headerlink" title="区域生成"></a>区域生成</h2><p>按照比例进行裁剪</p>
 <ul>
 <li>Fixed Crop<br>Fixed Crop: top-left、top-right、center-down(0.75)、center(0.85)、center(0.9)</li>
@@ -453,8 +455,8 @@
 <li>Randomly Crop<br>Randomly Crop: randomly crop N regions（0.7-0.95）</li>
 </ul>
 <p>三种裁剪策略的比较:<br><img src="https://imgconvert.csdnimg.cn/aHR0cDovL29ud2FpZXIuY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE5LzExLzE5NjZjMzAwZmY5NzQ3OGE1Mjk5YTFmODYxZGFlOThmLnBuZw?x-oss-process=image/format,png" alt="裁剪策略比较"></p>
-<h2 id="RB-Loss"><a href="#RB-Loss" class="headerlink" title="RB Loss"></a>RB Loss</h2><p>$L_{RB}=max(0,α−(μ<em>{max}−μ</em>{0}))$</p>
-<p>受到“不同的表情是由不同的表情区域决定的”的相关研究的启发，作者希望对self-Attention中的权重作出直接的限制，使裁剪区域中至少有一个的权重要大于原始人脸特征所占的权重。基于此提出了Region Biased Loss的损失函数，其中$\alpha$是超参数，${\mu}<em>{0}$表示copy人脸的特征所占的权重，${\mu}</em>{max}$表示所有裁剪人脸中特征所占的最大权重。在训练中，在分类损失函数中加入RB-Loss。作者在后面对该损失函数对实验性能的影响做了相关的实验比较。</p>
+<h2 id="RB-Loss"><a href="#RB-Loss" class="headerlink" title="RB Loss"></a>RB Loss</h2><p>$L_{RB}=max(0,α−(μ_{max}−μ_{0}))$</p>
+<p>受到“不同的表情是由不同的表情区域决定的”的相关研究的启发，作者希望对self-Attention中的权重作出直接的限制，使裁剪区域中至少有一个的权重要大于原始人脸特征所占的权重。基于此提出了Region Biased Loss的损失函数，其中$\alpha$是超参数，${\mu}_{0}$表示copy人脸的特征所占的权重，${\mu}_{max}$表示所有裁剪人脸中特征所占的最大权重。在训练中，在分类损失函数中加入RB-Loss。作者在后面对该损失函数对实验性能的影响做了相关的实验比较。</p>
 <h1 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h1><h2 id="实验数据介绍"><a href="#实验数据介绍" class="headerlink" title="实验数据介绍"></a>实验数据介绍</h2><p><img src="https://imgconvert.csdnimg.cn/aHR0cDovL29ud2FpZXIuY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE5LzExLzg0NTIxNzhhMzEyMzNlMzg0NWRjZmVjNjg5NjZmODMxLnBuZw?x-oss-process=image/format,png" alt="实验图片"></p>
 
       
@@ -500,8 +502,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/06/13/article-title/" rel="prev" title="article_title">
-                article_title <i class="fa fa-chevron-right"></i>
+              <a href="/2020/06/13/Spring-Cloud-1-1/" rel="prev" title="Spring Cloud 1">
+                Spring Cloud 1 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -586,7 +588,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -691,7 +693,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.4k</span>
+    <span title="Site words total count">2.9k</span>
   
 </div>
 
