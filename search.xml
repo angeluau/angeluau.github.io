@@ -63,4 +63,42 @@ while(true)
         <tag>自注意力</tag>
       </tags>
   </entry>
+  <entry>
+    <title>article_title</title>
+    <url>/2020/06/13/article-title/</url>
+    <content><![CDATA[#什么是微服务
+
+##概念
+
+分布式服务：专业的事情交给专业的人做，尽量降级耦合度
+将单一的业务拆分形成一组小服务
+服务级别之间采用轻量级的通信机制互相调用，基于HTTP的Restful API(Dubbo 是RPC 远程过程服务调用)
+
+##优点
+开发简单，效率高
+
+##微服务技术栈有哪些
+多种技术的集合体：
+服务开发：Spring Boot、Spring、SPring MVC
+服务治理
+服务注册:Eureaka、Consul、Zookeeper
+服务调用：Rest、RPC、gRPC
+服务负载均衡:Ribbion、Nginx
+服务接口调用：Feign
+消息队列：Rabbit MQ、Kafka
+服务部署： Docker
+服务监控
+Spring Cloud 配置中心
+
+
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Spring Cloud</tag>
+        <tag>微服务</tag>
+        <tag>实战</tag>
+      </tags>
+  </entry>
 </search>
