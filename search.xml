@@ -97,7 +97,7 @@
   <entry>
     <title>Spring Cloud 3</title>
     <url>/2020/06/14/Spring-Cloud-3/</url>
-    <content><![CDATA[<h1 id="Feign声明式接口调用"><a href="#Feign声明式接口调用" class="headerlink" title="Feign声明式接口调用"></a>Feign声明式接口调用</h1><p><img src="https://img2018.cnblogs.com/blog/1010726/201910/1010726-20191003002613664-1580554739.png" alt="Feign接口"></p>
+    <content><![CDATA[<h1 id="Feign声明式接口调用"><a href="#Feign声明式接口调用" class="headerlink" title="Feign声明式接口调用"></a>Feign声明式接口调用</h1><p><img src="./6452.png" alt="Feign接口"></p>
 <ul>
 <li>什么是 Feign？</li>
 </ul>
@@ -219,7 +219,7 @@
 <li>Handler</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.southwind.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/native"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NativeConfigHandler</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;server.port&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String port;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;foo&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String foo;</span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/index"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.port+<span class="string">"-"</span>+<span class="keyword">this</span>.foo;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Spring-Cloud-Config-远程配置"><a href="#Spring-Cloud-Config-远程配置" class="headerlink" title="Spring Cloud Config 远程配置"></a>Spring Cloud Config 远程配置</h2><p><img src="6452.png" alt=""></p>
+<h2 id="Spring-Cloud-Config-远程配置"><a href="#Spring-Cloud-Config-远程配置" class="headerlink" title="Spring Cloud Config 远程配置"></a>Spring Cloud Config 远程配置</h2><p><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2293103653,3008027373&amp;fm=26&amp;gp=0.jpg" alt="tu"></p>
 <ul>
 <li>创建配置⽂件，上传⾄ GitHub  </li>
 </ul>
@@ -294,7 +294,7 @@
 <li>Handler</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.southwind.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/zipkin"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ZipKinHandler</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;server.port&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String port;</span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/index"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.port;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="image-20200614204540566.png" alt="zipkin"></p>
+<p><img src="./image-20200614204540566.png" alt="zipkin"></p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -347,7 +347,7 @@
       </tags>
   </entry>
   <entry>
-    <title>spring cloud 2</title>
+    <title>Spring Cloud 2</title>
     <url>/2020/06/13/spring-cloud-2/</url>
     <content><![CDATA[<h1 id="RestTemplate-的使⽤"><a href="#RestTemplate-的使⽤" class="headerlink" title="RestTemplate 的使⽤"></a>RestTemplate 的使⽤</h1><ul>
 <li>什么是 RestTemplate？</li>
