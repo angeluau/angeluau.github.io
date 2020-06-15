@@ -304,9 +304,23 @@
       </tags>
   </entry>
   <entry>
-    <title>SpringBoot+Vue_1</title>
+    <title>SpringBoot+Vue前后端分离开发</title>
     <url>/2020/06/15/SpringBoot-Vue-1/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="前后端分离概念"><a href="#前后端分离概念" class="headerlink" title="前后端分离概念"></a>前后端分离概念</h1><p>前后端分离就是将⼀个应⽤的前端代码和后端代码分开写，为什么要这样做？<br>如果不使⽤前后端分离的⽅式，会有哪些问题？  </p>
+<p>传统的 Java Web 开发中，前端使⽤ JSP 开发， JSP 不是由后端开发者来独⽴完成的。<br>前端—-&gt; HTML 静态⻚⾯ —-&gt;后端 —-&gt; JSP<br>这种开发⽅式效率极低，可以使⽤前后端分离的⽅式进⾏开发，就可以完美地解决这⼀问题。<br>前端只需要独⽴编写客户端代码，后端也只需要独⽴编写服务端代码提供数据接⼝即可。<br>前端通过 Ajax 请求来访问后端的数据接⼝，将 Model 展示到 View 中即可。<br>前后端开发者只需要提前约定好接⼝⽂档（URL、参数、数据类型…），然后分别独⽴开发即可，前端可以造假数据进⾏测试，完全不需要依赖于后端，最后完成前后端集成即可，真正实现了前后端应⽤的解耦合，极⼤地提升了开发效率。<br>单体—-&gt;前端应⽤ + 后端应⽤<br>前端应⽤：负责数据展示和⽤户交互。<br>后端应⽤：负责提供数据处理接⼝。<br>前端 HTML —-&gt; Ajax —-&gt; RESTful 后端数据接⼝。  </p>
+<p>传统的单体应⽤</p>
+<p><img src="/2020/06/15/SpringBoot-Vue-1/image-20200615083556261.png" alt="image-20200615083556261"></p>
+<p>前后端分离的结构  </p>
+<p><img src="/2020/06/15/SpringBoot-Vue-1/image-20200615083859273.png" alt="image-20200615083859273"></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
+        <tag>Vue</tag>
+        <tag>前后端分离开发</tag>
+      </tags>
   </entry>
   <entry>
     <title>论文阅读 Region Attention Networks for Pose and Occlusion Robust Facial Expression Recognition</title>

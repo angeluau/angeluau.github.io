@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="SpringBoot,Vue,前后端分离开发," />
 
 
 
@@ -79,14 +79,22 @@
 
 
 
+<meta name="description" content="前后端分离概念前后端分离就是将⼀个应⽤的前端代码和后端代码分开写，为什么要这样做？如果不使⽤前后端分离的⽅式，会有哪些问题？   传统的 Java Web 开发中，前端使⽤ JSP 开发， JSP 不是由后端开发者来独⽴完成的。前端—-&gt; HTML 静态⻚⾯ —-&gt;后端 —-&gt; JSP这种开发⽅式效率极低，可以使⽤前后端分离的⽅式进⾏开发，就可以完美地解决这⼀问题。前端只需要独⽴">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot+Vue_1">
+<meta property="og:title" content="SpringBoot+Vue前后端分离开发">
 <meta property="og:url" content="http://yoursite.com/2020/06/15/SpringBoot-Vue-1/index.html">
 <meta property="og:site_name" content="Taeyang&#39;s blog">
+<meta property="og:description" content="前后端分离概念前后端分离就是将⼀个应⽤的前端代码和后端代码分开写，为什么要这样做？如果不使⽤前后端分离的⽅式，会有哪些问题？   传统的 Java Web 开发中，前端使⽤ JSP 开发， JSP 不是由后端开发者来独⽴完成的。前端—-&gt; HTML 静态⻚⾯ —-&gt;后端 —-&gt; JSP这种开发⽅式效率极低，可以使⽤前后端分离的⽅式进⾏开发，就可以完美地解决这⼀问题。前端只需要独⽴">
+<meta property="og:image" content="http://yoursite.com/2020/06/15/SpringBoot-Vue-1/image-20200615083556261.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/15/SpringBoot-Vue-1/image-20200615083859273.png">
 <meta property="article:published_time" content="2020-06-15T00:01:37.000Z">
-<meta property="article:modified_time" content="2020-06-15T00:01:37.673Z">
+<meta property="article:modified_time" content="2020-06-15T06:18:16.941Z">
 <meta property="article:author" content="Taeyang">
+<meta property="article:tag" content="SpringBoot">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="前后端分离开发">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/15/SpringBoot-Vue-1/image-20200615083556261.png">
 
 
 
@@ -122,7 +130,7 @@
 
 
 
-  <title>SpringBoot+Vue_1 | Taeyang's blog</title>
+  <title>SpringBoot+Vue前后端分离开发 | Taeyang's blog</title>
   
 
 
@@ -300,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringBoot+Vue_1</h1>
+          <h1 class="post-title" itemprop="name headline">SpringBoot+Vue前后端分离开发</h1>
         
 
         <div class="post-meta">
@@ -322,6 +330,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -359,7 +389,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  331
                 </span>
               
 
@@ -396,7 +426,13 @@
       
 
       
-        
+        <h1 id="前后端分离概念"><a href="#前后端分离概念" class="headerlink" title="前后端分离概念"></a>前后端分离概念</h1><p>前后端分离就是将⼀个应⽤的前端代码和后端代码分开写，为什么要这样做？<br>如果不使⽤前后端分离的⽅式，会有哪些问题？  </p>
+<p>传统的 Java Web 开发中，前端使⽤ JSP 开发， JSP 不是由后端开发者来独⽴完成的。<br>前端—-&gt; HTML 静态⻚⾯ —-&gt;后端 —-&gt; JSP<br>这种开发⽅式效率极低，可以使⽤前后端分离的⽅式进⾏开发，就可以完美地解决这⼀问题。<br>前端只需要独⽴编写客户端代码，后端也只需要独⽴编写服务端代码提供数据接⼝即可。<br>前端通过 Ajax 请求来访问后端的数据接⼝，将 Model 展示到 View 中即可。<br>前后端开发者只需要提前约定好接⼝⽂档（URL、参数、数据类型…），然后分别独⽴开发即可，前端可以造假数据进⾏测试，完全不需要依赖于后端，最后完成前后端集成即可，真正实现了前后端应⽤的解耦合，极⼤地提升了开发效率。<br>单体—-&gt;前端应⽤ + 后端应⽤<br>前端应⽤：负责数据展示和⽤户交互。<br>后端应⽤：负责提供数据处理接⼝。<br>前端 HTML —-&gt; Ajax —-&gt; RESTful 后端数据接⼝。  </p>
+<p>传统的单体应⽤</p>
+<p><img src="/2020/06/15/SpringBoot-Vue-1/image-20200615083556261.png" alt="image-20200615083556261"></p>
+<p>前后端分离的结构  </p>
+<p><img src="/2020/06/15/SpringBoot-Vue-1/image-20200615083859273.png" alt="image-20200615083859273"></p>
+
       
     </div>
     
@@ -410,6 +446,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-instagram"></i> SpringBoot</a>
+          
+            <a href="/tags/Vue/" rel="tag"><i class="fa fa-instagram"></i> Vue</a>
+          
+            <a href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-instagram"></i> 前后端分离开发</a>
+          
+        </div>
       
 
       
@@ -483,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -525,7 +580,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -565,6 +620,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前后端分离概念"><span class="nav-number">1.</span> <span class="nav-text">前后端分离概念</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -592,7 +663,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.5k</span>
+    <span title="Site words total count">7.9k</span>
   
 </div>
 
