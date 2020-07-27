@@ -646,7 +646,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Spring框架核心机制</title>
+    <title>SSM框架整合</title>
     <url>/2020/07/26/SSM-1/</url>
     <content><![CDATA[<h3 id="SSM框架整合"><a href="#SSM框架整合" class="headerlink" title="SSM框架整合"></a>SSM框架整合</h3><p>Spring + Spring MVC + MyBatis</p>
 <p>Spring MVC 负责实现 MVC 设计模式，MyBatis 负责数据持久层，Spring 负责管理 Spring MVC 和 MyBatis 相关对象的创建和依赖注入。</p>
@@ -702,5 +702,10 @@
         <tag>SSM</tag>
         <tag>MyBatis</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Dubbo</title>
+    <url>/2020/07/27/Dubbo/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
